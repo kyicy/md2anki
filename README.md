@@ -18,7 +18,7 @@ $ npm install -g @kyicy/md2anki
 $ md2anki COMMAND
 running command...
 $ md2anki (-v|--version|version)
-@kyicy/md2anki/0.0.4 darwin-x64 node-v14.17.0
+@kyicy/md2anki/0.0.5 darwin-x64 node-v14.17.0
 $ md2anki --help [COMMAND]
 USAGE
   $ md2anki COMMAND
