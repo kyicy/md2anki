@@ -48,7 +48,7 @@ exports.Run = async function (deckName, from, to, logger) {
     const cssFiles = ["github-dark.min.css", "primer.min.css", "vs2015.min.css", "katex.min.css"]
 
     for await (const fileName of cssFiles) {
-        const file = path.resolve(__dirname, "..", "asset", fileName)
+        const file = path.resolve(__dirname, "asset", fileName)
         const content = await fs.readFile(file)
         cssStr += `\n${content.toString()}\n`
     }
@@ -82,7 +82,7 @@ exports.Run = async function (deckName, from, to, logger) {
             count++
             const buf = await fs.readFile(actualPath)
             const cardContent = md.render(buf.toString())
-            apkg.addCard(header + cardContent + footer, "", {tags: md.meta.tags} || [])
+            apkg.addCard(header + cardContent + footer, "", { tags: md.meta.tags } || [])
         }
     }
 
@@ -90,7 +90,7 @@ exports.Run = async function (deckName, from, to, logger) {
     const fromPath = path.resolve(from)
     await walk(fromPath)
 
-    if (count == 0 ) {
+    if (count == 0) {
         logger(`No markdown file found at: ${fromPath}`)
         return
     }

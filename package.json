@@ -1,7 +1,7 @@
 {
   "name": "@kyicy/md2anki",
   "description": "convert markdown files to a single anki package file",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "kyicy",
   "bin": {
     "md2anki": "./bin/run"
