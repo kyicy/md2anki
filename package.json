@@ -1,0 +1,47 @@
+{
+  "name": "@kyicy/md2anki",
+  "description": "convert markdown files to a single anki package file",
+  "version": "0.0.2",
+  "author": "kyicy",
+  "bin": {
+    "md2anki": "./bin/run"
+  },
+  "bugs": "https://github.com/kyicy/md2anki/issues",
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.26.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/src"
+  ],
+  "homepage": "https://github.com/kyicy/md2anki",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "bin": "md2anki"
+  },
+  "repository": "kyicy/md2anki",
+  "scripts": {
+    "prepack": "oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "dependencies": {
+    "@oclif/command": "^1.8.0",
+    "@oclif/config": "^1.17.0",
+    "@oclif/plugin-help": "^3.2.2",
+    "@traptitech/markdown-it-katex": "^3.4.3",
+    "anki-apkg-export": "^4.0.3",
+    "highlight.js": "^11.0.0",
+    "markdown-it": "^12.0.6",
+    "markdown-it-checkbox": "^1.1.0",
+    "markdown-it-meta": "^0.0.1",
+    "markdown-it-new-katex": "^2.0.3"
+  }
+}
