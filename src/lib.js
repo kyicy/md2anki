@@ -43,7 +43,7 @@ var footer = `
 
 const AnkiExport = require('anki-apkg-export').default;
 
-exports.Run = async function (deckName, from, to, logger) {
+exports.Run = async function (deckName, from, to, tag,  logger) {
     var cssStr = ""
     const cssFiles = ["github-dark.min.css", "primer.min.css", "vs2015.min.css", "katex.min.css"]
 
@@ -82,7 +82,11 @@ exports.Run = async function (deckName, from, to, logger) {
             count++
             const buf = await fs.readFile(actualPath)
             const cardContent = md.render(buf.toString())
-            apkg.addCard(header + cardContent + footer, "", { tags: md.meta.tags } || [])
+            const mdTags  = md.meta.tags || []
+            if (tag.length > 0 && !mdTags.includes(tag)) {
+                continue
+            }
+            apkg.addCard(header + cardContent + footer, "", { tags:  mdTags} )
         }
     }
 
